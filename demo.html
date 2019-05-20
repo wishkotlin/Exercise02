@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>IE</title>
+
+    <script src="js/template-web.js"></script>
+    <script src="./js/fetch-jsonp.js"></script>
+  </head>
+
+  <body>
+    <div id="content"></div>
+    <script id="test" type="text/html">
+        {{each $data.child}}
+        <p> {{$index}} === {{$value.img}}</p>
+        {{/each}}
+        <p>{{$data.child}}</p>
+      <!-- {{if isAdmin}} -->
+
+      <!-- <h1>{{title}}</h1>
+      <ul>
+          {{each list value i}}
+              <li>索引 {{i + 1}} ：{{value}}</li>
+          {{/each}}
+      </ul> -->
+
+
+      <!-- {{/if}} -->
+      <!-- {{$data}} -->
+    </script>
+
+    <script>
+      //   var result = fetchJsonp(
+      //     "http://www.mocky.io/v2/5cb9de333000009e1fbfa693",
+      //     // {
+      //     //   jsonpCallback: "jsoncallback",
+      //     //   timeout: 4000
+      //     // }
+      //   );
+      //   console.log(result)
+      //   result
+      //     .then(function(response) {
+      //         console.log(response.json())
+      //       return response.json();
+      //     })
+      //     .then(function(json) {
+      //         console.log(json)
+      //         localStorage.setItem('item',JSON.stringify(json))
+      //         var html = template("test", json);
+      //         document.getElementById("content").innerHTML = html;
+      //     })
+
+      // ["catch"](function(ex) {
+      //   document.body.innerHTML = "failed:" + ex;
+      // });
+      var data = [
+        {
+          id: 1,
+          banner: "../public/images/03f8f031-7dfd-4a75-b835-edeb38229a58.jpg",
+          "m-banner":
+            "../public/images/2b82c4a5-72e8-4ab8-8548-a7017dfab062.jpg",
+          child: [
+            {
+              id: 1,
+              img: "../public/images/f7344de3-6461-4c8b-ba13-84751f239a19.jpg",
+              name: "高梵反季羽绒服女中长款加厚清仓特价断码连帽新款韩",
+              price: 169,
+              mprice: 1069,
+              pre_id: 1
+            },
+            {
+              id: 2,
+              img: "../public/images/84800201-0685-41d6-a28b-be0195c94502.jpg",
+              name:
+                "JEEP吉普女装冬季加绒牛仔裤女高腰保暖韩版小脚裤子显瘦长裤新款",
+              price: 110,
+              mprice: 268,
+              pre_id: 1
+            },
+            {
+              id: 3,
+              img: "../public/images/822e0bc5-28b7-4037-aecd-f64c84b6edc9.jpg",
+              name:
+                "浪莎冬季加绒加厚打底裤女外穿保暖裤肉色丝袜女光腿神器连裤袜",
+              price: 35.8,
+              mprice: 98,
+              pre_id: 1
+            }
+          ]
+        },
+        {
+          id: 2,
+          banner: "../public/images/24e5f977-51d1-4906-88bd-9d8035cc41d6.jpg",
+          "m-banner":
+            "../public/images/5ad26186-6b85-487a-99aa-84c8e88b2fc5.jpg",
+          child: [
+            {
+              id: 4,
+              img: "../public/images/1606a97b-8f97-495d-8cbf-46b7e99cdd4f.jpg",
+              name: "雅鹿正品冬季长袖保暖衬衫中青年修身男士加绒加厚衬衣爸爸装",
+              price: 49,
+              mprice: 299,
+              pre_id: 2
+            },
+            {
+              id: 5,
+              img: "../public/images/55264713-a8ec-465e-b850-2dd798b7aa8f.jpg",
+              name:
+                "【230元限时抢，抢完恢复236元】美国正品JEEP/吉普 春秋厚款潮流修身男士牛仔裤 弹力小脚长裤子",
+              price: 230,
+              mprice: 399,
+              pre_id: 2
+            },
+            {
+              id: 6,
+              img: "../public/images/a95e8107-a5ae-4221-8623-f4ba5ac6a60a.jpg",
+              name: "七匹狼羽绒服男士户外时尚冬季短款连帽多口袋运动羽绒服外套",
+              price: 1074,
+              mprice: 2000,
+              pre_id: 2
+            }
+          ]
+        },
+        {
+          id: 3,
+          banner: "../public/images/82a71872-2e08-4d86-b5dd-c6d71e0fcd87.jpg",
+          "m-banner":
+            "../public/images/82a71872-2e08-4d86-b5dd-c6d71e0fcd87.jpg",
+          child: [
+            {
+              id: 7,
+              img: "../public/images/1eb09640-dd0b-429b-bae5-94331a65ab08.jpg",
+              name:
+                "【香港直邮】【护肤护发护甲】澳洲 Swisse 活力胶原蛋白片100粒/瓶 促进生成",
+              price: 99,
+              mprice: 309,
+              pre_id: 3
+            },
+            {
+              id: 8,
+              img: "../public/images/442f0686-701f-45a6-b6ac-819c139a7dae.jpg",
+              name:
+                "【香港直邮】假一赔十【调理姨妈】澳洲 Blackmores 澳佳宝 月见草胶囊190粒",
+              price: 92,
+              mprice: 150,
+              pre_id: 3
+            },
+            {
+              id: 9,
+              img: "../public/images/4a30e83d-af5e-49ed-a9f5-a26c3e0594e9.jpg",
+              name:
+                "【香港直邮】【假一赔十 增体质】 澳洲Healthy Care 黑蜂胶 胶囊2000mg 200粒",
+              price: 89,
+              mprice: 199,
+              pre_id: 3
+            }
+          ]
+        },
+        {
+          id: 4,
+          banner: "../public/images/4df23282-c885-4422-838a-c497622efeeb.jpg",
+          "m-banner":
+            "../public/images/26ff0981-94c4-4450-8200-07883221907c.jpg",
+          child: [
+            {
+              id: 10,
+              img: "../public/images/2b668d65-3b26-4c56-812a-48f4018176d6.jpg",
+              name:
+                "回力男棉鞋真皮商务正装皮鞋男士高帮鞋中老年短靴真毛绒雪地靴冬",
+              price: 75,
+              mprice: 268,
+              pre_id: 4
+            },
+            {
+              id: 11,
+              img: "../public/images/61cac461-d445-439e-bab8-8836f76d5395.jpg",
+              name:
+                "艾斯臣真牛皮雪地靴女磨砂搭扣短靴平底保暖加厚加绒防滑休闲棉鞋",
+              price: 78,
+              mprice: 345,
+              pre_id: 4
+            },
+            {
+              id: 12,
+              img: "../public/images/7375ea9b-d2ee-48e7-837a-8e6999c6549a.jpg",
+              name:
+                "【羚羊早安】 女士韩版保暖格子围巾女针织围脖百搭披肩 185克重",
+              price: 19.8,
+              mprice: 298,
+              pre_id: 4
+            }
+          ]
+        }
+      ];
+      console.log(data);
+      var html = template("test", data['one']);
+      document.getElementById("content").innerHTML = html;
+    </script>
+  </body>
+</html>
